@@ -139,7 +139,7 @@ export function LocationMap() {
       <rect x="390" y="164" width="190" height="80" rx="8" fill="#d5d7c9" />
       <path d="M416 229q30-64 67-27t69-24" stroke="#ecece2" strokeWidth="12" fill="none" />
       <path d="M0 143h600M0 264h600M175 0v360M369 0v360" stroke="#faf7f1" strokeWidth="22" />
-      <g fill="#756961" fontFamily="Arial,sans-serif" fontSize="10" letterSpacing="2"><text x="205" y="146">НАРНЫ ГУДАМЖ</text><text x="429" y="224" fontSize="8">ЦЭЦЭРЛЭГТ ХҮРЭЭЛЭН</text></g>
+      <g fill="#756961" fontFamily="Arial,sans-serif" fontSize="10" letterSpacing="2"><text x="205" y="146">НАРНЫ ГУДАМЖ</text><text x="429" y="224" fontSize="10">ЦЭЦЭРЛЭГТ ХҮРЭЭЛЭН</text></g>
       <circle cx="278" cy="192" r="44" fill="#966f6b" opacity=".12" /><circle cx="278" cy="192" r="29" fill="#966f6b" opacity=".15" />
       <path d="M278 217s-19-17-19-31a19 19 0 0 1 38 0c0 14-19 31-19 31Z" fill="#815b58" />
       <circle cx="278" cy="184" r="5" fill="#faf6ef" />

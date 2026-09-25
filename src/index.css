@@ -6,6 +6,9 @@
 :root { font-family: var(--font-sans); color: #332e2c; background: #f8f5ef; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; --rose: #855e5b; --muted: #766c65; --line: #ded6cc; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 112px; }
+/* Sections entered by id stop clear of the fixed header, not just same-page jumps. */
+section[id] { scroll-margin-top: 112px; }
+@media (max-width: 760px) { html { scroll-padding-top: 88px; } section[id] { scroll-margin-top: 88px; } }
 body { margin: 0; min-width: 320px; }
 button,a,select { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 button,select,input { font: inherit; }
@@ -48,7 +51,7 @@ svg { flex-shrink: 0; }
 .logo { display: inline-flex; flex-direction: column; align-items: center; flex-shrink: 0; width: fit-content; }
 .logo > span { font-family: Georgia,serif; font-size: 37px; letter-spacing: .19em; line-height: 1; position: relative; }
 .logo-star { font-size: 18px; position: absolute; right: -11px; top: -8px; letter-spacing: 0; color: var(--rose); }
-.logo > small { font-size: 7px; font-weight: 500; letter-spacing: .37em; padding-right: 7px; margin-top: 8px; }
+.logo > small { font-size: 9.5px; font-weight: 500; letter-spacing: .3em; padding-right: 7px; margin-top: 8px; }
 .desktop-nav { align-items: center; gap: 26px; }
 .desktop-nav a { font-size: 14px; padding-block: 14px; transition: color .2s; }
 .desktop-nav a:hover { color: var(--rose); }
@@ -299,10 +302,16 @@ svg { flex-shrink: 0; }
   .section-label { font-size: 13px; margin-bottom: 20px; letter-spacing: .15em; }
   .nav-shell { height: 80px; gap: 15px; }
   .logo > span { font-size: 31px; }
-  .logo > small { font-size: 6px; }
+  .logo > small { font-size: 9.5px; letter-spacing: .26em; }
   .nav-book { font-size: 13px; padding: 12px 10px; gap: 7px; white-space: nowrap; }
   .nav-actions { gap: 9px; }
   .menu-toggle { width: 40px; height: 40px; }
+  /* Fixed bar is 80px here. Section starts carry that clearance so an eyebrow or heading
+     arriving at the top of a screen is not sliced by the navbar. */
+  section[id]:not(.hero) { padding-top: 10px; }
+  .section-label { scroll-margin-top: 96px; }
+  /* The centred booking panel began right at the fold, so its label sat under the bar. */
+  .booking-cta-inner { padding-block: 84px 72px; }
   .hero { padding-top: 124px; }
   .hero-grid { display: flex; flex-direction: column; gap: 43px; align-items: stretch; }
   .hero-copy { padding-bottom: 0; }
@@ -388,11 +397,14 @@ svg { flex-shrink: 0; }
   .nav-shell { width: calc(100% - 24px); }
   .nav-shell { gap: 10px; }
   .logo > span { font-size: 28px; }
-  .logo > small { font-size: 5px; }
+  .logo > small { font-size: 9.5px; letter-spacing: .16em; }
   .nav-book { gap: 7px; padding-inline: 9px; font-size: 13px; }
   .nav-book svg { width: 13px; height: 13px; }
   .nav-actions { gap: 7px; }
   .menu-toggle { width: 36px; height: 40px; }
+  /* The eyebrow wraps to two lines at this width, so the inherited 124px hero padding
+     let it ride up under the fixed bar and collide with the logo and headline. */
+  .hero { padding-top: 150px; }
   .hero h1 { font-size: 42px; }
   .hero-actions { gap: 18px; }
   .hero-image-frame { height: 405px; }
